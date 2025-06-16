@@ -1,0 +1,360 @@
+cglab118@CGLAB71268 MINGW64 ~/Desktop/inventario-master
+$ chmod 400 "guaragest-2025.pem"
+
+cglab118@CGLAB71268 MINGW64 ~/Desktop/inventario-master
+$ ssh -i "guaragest-2025.pem" ec2-user@ec2-54-160-76-28.compute-1.amazonaws.com
+The authenticity of host 'ec2-54-160-76-28.compute-1.amazonaws.com (54.160.76.28)' can't be established.
+ED25519 key fingerprint is SHA256:/9C823eUTfG0PZF3RIN4VWqUK2iX47rP4uUYJUOQtf4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-54-160-76-28.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-23-35 ~]$ sudo yum update -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                     157 kB/s |  17 kB     00:00    
+Dependencies resolved.
+Nothing to do.
+Complete!
+[ec2-user@ip-172-31-23-35 ~]$ sudo yum install git -y
+Last metadata expiration check: 0:00:15 ago on Mon Jun 16 22:46:09 2025.
+Dependencies resolved.
+==================================================================================================================================================
+ Package                             Architecture              Version                                       Repository                      Size 
+==================================================================================================================================================
+Installing:
+ git                                 x86_64                    2.47.1-1.amzn2023.0.3                         amazonlinux                     52 k 
+Installing dependencies:
+ git-core                            x86_64                    2.47.1-1.amzn2023.0.3                         amazonlinux                    4.5 M 
+ git-core-doc                        noarch                    2.47.1-1.amzn2023.0.3                         amazonlinux                    2.8 M 
+ perl-Error                          noarch                    1:0.17029-5.amzn2023.0.2                      amazonlinux                     41 k
+ perl-File-Find                      noarch                    1.37-477.amzn2023.0.7                         amazonlinux                     25 k 
+ perl-Git                            noarch                    2.47.1-1.amzn2023.0.3                         amazonlinux                     40 k 
+ perl-TermReadKey                    x86_64                    2.38-9.amzn2023.0.2                           amazonlinux                     36 k 
+ perl-lib                            x86_64                    0.65-477.amzn2023.0.7                         amazonlinux                     15 k 
+
+Transaction Summary
+==================================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.5 M
+Installed size: 37 M
+Downloading Packages:
+(1/8): git-2.47.1-1.amzn2023.0.3.x86_64.rpm                                                                       1.3 MB/s |  52 kB     00:00     
+(2/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                               2.0 MB/s |  41 kB     00:00     
+(3/8): perl-File-Find-1.37-477.amzn2023.0.7.noarch.rpm                                                            1.0 MB/s |  25 kB     00:00    
+(4/8): git-core-doc-2.47.1-1.amzn2023.0.3.noarch.rpm                                                               22 MB/s | 2.8 MB     00:00     
+(5/8): perl-Git-2.47.1-1.amzn2023.0.3.noarch.rpm                                                                  965 kB/s |  40 kB     00:00     
+(6/8): git-core-2.47.1-1.amzn2023.0.3.x86_64.rpm                                                                   28 MB/s | 4.5 MB     00:00     
+(7/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                                            884 kB/s |  36 kB     00:00     
+(8/8): perl-lib-0.65-477.amzn2023.0.7.x86_64.rpm                                                                  367 kB/s |  15 kB     00:00     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                              37 MB/s | 7.5 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                          1/1 
+  Installing       : git-core-2.47.1-1.amzn2023.0.3.x86_64                                                                                    1/8 
+  Installing       : git-core-doc-2.47.1-1.amzn2023.0.3.noarch                                                                                2/8 
+  Installing       : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                    3/8 
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                              4/8 
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                              5/8 
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                               6/8 
+  Installing       : perl-Git-2.47.1-1.amzn2023.0.3.noarch                                                                                    7/8 
+  Installing       : git-2.47.1-1.amzn2023.0.3.x86_64                                                                                         8/8 
+  Running scriptlet: git-2.47.1-1.amzn2023.0.3.x86_64                                                                                         8/8 
+  Verifying        : git-2.47.1-1.amzn2023.0.3.x86_64                                                                                         1/8 
+  Verifying        : git-core-2.47.1-1.amzn2023.0.3.x86_64                                                                                    2/8 
+  Verifying        : git-core-doc-2.47.1-1.amzn2023.0.3.noarch                                                                                3/8 
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                               4/8 
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                              5/8 
+  Verifying        : perl-Git-2.47.1-1.amzn2023.0.3.noarch                                                                                    6/8 
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                              7/8 
+  Verifying        : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                    8/8 
+
+Installed:
+  git-2.47.1-1.amzn2023.0.3.x86_64                 git-core-2.47.1-1.amzn2023.0.3.x86_64            git-core-doc-2.47.1-1.amzn2023.0.3.noarch     
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch       perl-File-Find-1.37-477.amzn2023.0.7.noarch      perl-Git-2.47.1-1.amzn2023.0.3.noarch
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64      perl-lib-0.65-477.amzn2023.0.7.x86_64
+
+Complete!
+[ec2-user@ip-172-31-23-35 ~]$ sudo yum install httpd
+Last metadata expiration check: 0:00:50 ago on Mon Jun 16 22:46:09 2025.
+Dependencies resolved.
+==================================================================================================================================================
+ Package                                Architecture              Version                                    Repository                      Size 
+==================================================================================================================================================
+Installing:
+ httpd                                  x86_64                    2.4.62-1.amzn2023                          amazonlinux                     48 k 
+Installing dependencies:
+ apr                                    x86_64                    1.7.5-1.amzn2023.0.4                       amazonlinux                    129 k 
+ apr-util                               x86_64                    1.6.3-1.amzn2023.0.1                       amazonlinux                     98 k 
+ generic-logos-httpd                    noarch                    18.0.0-12.amzn2023.0.3                     amazonlinux                     19 k 
+ httpd-core                             x86_64                    2.4.62-1.amzn2023                          amazonlinux                    1.4 M 
+ httpd-filesystem                       noarch                    2.4.62-1.amzn2023                          amazonlinux                     14 k 
+ httpd-tools                            x86_64                    2.4.62-1.amzn2023                          amazonlinux                     81 k 
+ libbrotli                              x86_64                    1.0.9-4.amzn2023.0.2                       amazonlinux                    315 k 
+ mailcap                                noarch                    2.1.49-3.amzn2023.0.3                      amazonlinux                     33 k 
+Installing weak dependencies:
+ apr-util-openssl                       x86_64                    1.6.3-1.amzn2023.0.1                       amazonlinux                     17 k 
+ mod_http2                              x86_64                    2.0.27-1.amzn2023.0.3                      amazonlinux                    166 k 
+ mod_lua                                x86_64                    2.4.62-1.amzn2023                          amazonlinux                     61 k 
+
+Transaction Summary
+==================================================================================================================================================
+Install  12 Packages
+
+Total download size: 2.3 M
+Installed size: 6.9 M
+Is this ok [y/N]: yes
+Downloading Packages:
+(1/12): apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                          471 kB/s |  17 kB     00:00     
+(2/12): apr-util-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                  2.4 MB/s |  98 kB     00:00     
+(3/12): apr-1.7.5-1.amzn2023.0.4.x86_64.rpm                                                                       2.5 MB/s | 129 kB     00:00     
+(4/12): generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch.rpm                                                     1.0 MB/s |  19 kB     00:00     
+(5/12): httpd-2.4.62-1.amzn2023.x86_64.rpm                                                                        2.2 MB/s |  48 kB     00:00    
+(6/12): httpd-filesystem-2.4.62-1.amzn2023.noarch.rpm                                                             670 kB/s |  14 kB     00:00     
+(7/12): httpd-tools-2.4.62-1.amzn2023.x86_64.rpm                                                                  3.5 MB/s |  81 kB     00:00     
+(8/12): httpd-core-2.4.62-1.amzn2023.x86_64.rpm                                                                    27 MB/s | 1.4 MB     00:00     
+(9/12): mailcap-2.1.49-3.amzn2023.0.3.noarch.rpm                                                                  1.7 MB/s |  33 kB     00:00     
+(10/12): libbrotli-1.0.9-4.amzn2023.0.2.x86_64.rpm                                                                8.6 MB/s | 315 kB     00:00    
+(11/12): mod_lua-2.4.62-1.amzn2023.x86_64.rpm                                                                     2.9 MB/s |  61 kB     00:00     
+(12/12): mod_http2-2.0.27-1.amzn2023.0.3.x86_64.rpm                                                               5.6 MB/s | 166 kB     00:00     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                              14 MB/s | 2.3 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                          1/1 
+  Installing       : apr-1.7.5-1.amzn2023.0.4.x86_64                                                                                         1/12 
+  Installing       : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                            2/12 
+  Installing       : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                    3/12 
+  Installing       : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                    4/12 
+  Installing       : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                    5/12 
+  Installing       : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                   6/12 
+  Running scriptlet: httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                               7/12 
+  Installing       : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                               7/12 
+  Installing       : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                     8/12 
+  Installing       : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                  9/12 
+  Installing       : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                       10/12 
+  Installing       : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                      11/12 
+  Installing       : httpd-2.4.62-1.amzn2023.x86_64                                                                                         12/12 
+  Running scriptlet: httpd-2.4.62-1.amzn2023.x86_64                                                                                         12/12 
+  Verifying        : apr-1.7.5-1.amzn2023.0.4.x86_64                                                                                         1/12 
+  Verifying        : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                    2/12 
+  Verifying        : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                            3/12 
+  Verifying        : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                       4/12 
+  Verifying        : httpd-2.4.62-1.amzn2023.x86_64                                                                                          5/12 
+  Verifying        : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                     6/12 
+  Verifying        : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                               7/12 
+  Verifying        : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                    8/12 
+  Verifying        : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                   9/12 
+  Verifying        : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                   10/12 
+  Verifying        : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                 11/12 
+  Verifying        : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                       12/12 
+
+Installed:
+  apr-1.7.5-1.amzn2023.0.4.x86_64                      apr-util-1.6.3-1.amzn2023.0.1.x86_64      apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64     
+  generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch    httpd-2.4.62-1.amzn2023.x86_64            httpd-core-2.4.62-1.amzn2023.x86_64
+  httpd-filesystem-2.4.62-1.amzn2023.noarch            httpd-tools-2.4.62-1.amzn2023.x86_64      libbrotli-1.0.9-4.amzn2023.0.2.x86_64
+  mailcap-2.1.49-3.amzn2023.0.3.noarch                 mod_http2-2.0.27-1.amzn2023.0.3.x86_64    mod_lua-2.4.62-1.amzn2023.x86_64
+
+Complete!
+[ec2-user@ip-172-31-23-35 ~]$ sudo mkdir -p var/www/html
+[ec2-user@ip-172-31-23-35 ~]$ ls
+var
+[ec2-user@ip-172-31-23-35 ~]$ cd var/www/html
+[ec2-user@ip-172-31-23-35 html]$ git clone https://github.com/Matheuscrf/guaragest.git .
+Cloning into '.'...
+/home/ec2-user/var/www/html/.git: Permission denied
+[ec2-user@ip-172-31-23-35 html]$ sudo git clone https://github.com/Matheuscrf/guaragest.git .
+Cloning into '.'...
+remote: Enumerating objects: 67, done.
+remote: Counting objects: 100% (67/67), done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 67 (delta 19), reused 67 (delta 19), pack-reused 0 (from 0)
+Receiving objects: 100% (67/67), 122.02 KiB | 12.20 MiB/s, done.
+Resolving deltas: 100% (19/19), done.
+[ec2-user@ip-172-31-23-35 html]$ ls
+README.md                    database                       editar_grupo.php              fabricantes.php               logout.php
+adicionar_equipamento.php    deletar_equipamento.php        editar_perfil.php             finalizar_transferencia.php   perfil.php
+adicionar_transferencia.php  deletar_fabricante.php         editar_setor.php              grupos.php                    relatorios.php
+adicionar_usuario.php        deletar_setor.php              editar_situacao.php           guaragest-2025.pem            setores.php
+ajax.php                     deletar_situacao.php           editar_tipos_equipamento.php  historico_transferencias.php  situacoes.php
+assets                       deletar_tipos_equipamento.php  editar_transferencia.php      includes                      tipos_equipamento.php     
+auth.php                     editar_equipamento.php         editar_usuario.php            index.php                     transferencias.php        
+dashboard.php                editar_fabricante.php          equipamentos.php              layouts                       usuarios.php
+[ec2-user@ip-172-31-23-35 html]$ sudo systemctl start httpd 
+[ec2-user@ip-172-31-23-35 html]$ sudo systemctl status  httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)
+     Active: active (running) since Mon 2025-06-16 22:56:08 UTC; 14s ago
+       Docs: man:httpd.service(8)
+   Main PID: 27284 (httpd)
+     Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"
+      Tasks: 177 (limit: 1111)
+     Memory: 13.0M
+        CPU: 72ms
+     CGroup: /system.slice/httpd.service
+             ├─27284 /usr/sbin/httpd -DFOREGROUND
+             ├─27285 /usr/sbin/httpd -DFOREGROUND
+             ├─27286 /usr/sbin/httpd -DFOREGROUND
+             ├─27287 /usr/sbin/httpd -DFOREGROUND
+             └─27288 /usr/sbin/httpd -DFOREGROUND
+
+Jun 16 22:56:08 ip-172-31-23-35.ec2.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...
+log file support is not available  (press RETURN)
+[ec2-user@ip-172-31-23-35 html]$ ^C
+[ec2-user@ip-172-31-23-35 html]$ ^C
+[ec2-user@ip-172-31-23-35 html]$ ^C
+[ec2-user@ip-172-31-23-35 html]$ log file support is not available  (press RETURN)
+-bash: syntax error near unexpected token `('
+[ec2-user@ip-172-31-23-35 html]$ sudo yum install php php-mysqlnd httpd -y
+Last metadata expiration check: 0:13:07 ago on Mon Jun 16 22:46:09 2025.
+Package httpd-2.4.62-1.amzn2023.x86_64 is already installed.
+Dependencies resolved.
+==================================================================================================================================================
+ Package                             Architecture              Version                                       Repository                      Size 
+==================================================================================================================================================
+Installing:
+ php8.4                              x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                     17 k 
+ php8.4-mysqlnd                      x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    145 k 
+Installing dependencies:
+ libsodium                           x86_64                    1.0.19-4.amzn2023                             amazonlinux                    176 k 
+ libxslt                             x86_64                    1.1.43-1.amzn2023.0.1                         amazonlinux                    183 k 
+ nginx-filesystem                    noarch                    1:1.26.3-1.amzn2023.0.1                       amazonlinux                    9.6 k 
+ php8.4-cli                          x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    3.5 M 
+ php8.4-common                       x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    773 k 
+ php8.4-pdo                          x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                     94 k 
+ php8.4-process                      x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                     46 k 
+ php8.4-xml                          x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    908 k 
+Installing weak dependencies:
+ php8.4-fpm                          x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    1.9 M 
+ php8.4-mbstring                     x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    534 k 
+ php8.4-opcache                      x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                    480 k 
+ php8.4-sodium                       x86_64                    8.4.6-1.amzn2023.0.1                          amazonlinux                     45 k 
+
+Transaction Summary
+==================================================================================================================================================
+Install  14 Packages
+
+Total download size: 8.7 M
+Installed size: 42 M
+Downloading Packages:
+(1/14): nginx-filesystem-1.26.3-1.amzn2023.0.1.noarch.rpm                                                         281 kB/s | 9.6 kB     00:00    
+(2/14): libsodium-1.0.19-4.amzn2023.x86_64.rpm                                                                    3.7 MB/s | 176 kB     00:00     
+(3/14): libxslt-1.1.43-1.amzn2023.0.1.x86_64.rpm                                                                  3.2 MB/s | 183 kB     00:00     
+(4/14): php8.4-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                                    748 kB/s |  17 kB     00:00     
+(5/14): php8.4-common-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                              12 MB/s | 773 kB     00:00     
+(6/14): php8.4-fpm-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                                 22 MB/s | 1.9 MB     00:00     
+(7/14): php8.4-mysqlnd-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                            4.5 MB/s | 145 kB     00:00     
+(8/14): php8.4-cli-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                                 22 MB/s | 3.5 MB     00:00     
+(9/14): php8.4-mbstring-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                           5.7 MB/s | 534 kB     00:00     
+(10/14): php8.4-opcache-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                           9.9 MB/s | 480 kB     00:00     
+(11/14): php8.4-process-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                           2.2 MB/s |  46 kB     00:00     
+(12/14): php8.4-sodium-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                            2.3 MB/s |  45 kB     00:00    
+(13/14): php8.4-xml-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                                17 MB/s | 908 kB     00:00     
+(14/14): php8.4-pdo-8.4.6-1.amzn2023.0.1.x86_64.rpm                                                               1.1 MB/s |  94 kB     00:00     
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                              27 MB/s | 8.7 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                          1/1 
+  Installing       : php8.4-common-8.4.6-1.amzn2023.0.1.x86_64                                                                               1/14 
+  Installing       : php8.4-pdo-8.4.6-1.amzn2023.0.1.x86_64                                                                                  2/14 
+  Installing       : php8.4-cli-8.4.6-1.amzn2023.0.1.x86_64                                                                                  3/14 
+  Installing       : php8.4-mbstring-8.4.6-1.amzn2023.0.1.x86_64                                                                             4/14 
+  Installing       : php8.4-opcache-8.4.6-1.amzn2023.0.1.x86_64                                                                              5/14 
+  Installing       : php8.4-process-8.4.6-1.amzn2023.0.1.x86_64                                                                              6/14 
+  Running scriptlet: nginx-filesystem-1:1.26.3-1.amzn2023.0.1.noarch                                                                         7/14 
+  Installing       : nginx-filesystem-1:1.26.3-1.amzn2023.0.1.noarch                                                                         7/14 
+  Installing       : php8.4-fpm-8.4.6-1.amzn2023.0.1.x86_64                                                                                  8/14 
+  Running scriptlet: php8.4-fpm-8.4.6-1.amzn2023.0.1.x86_64                                                                                  8/14 
+  Installing       : libxslt-1.1.43-1.amzn2023.0.1.x86_64                                                                                    9/14 
+  Installing       : php8.4-xml-8.4.6-1.amzn2023.0.1.x86_64                                                                                 10/14 
+  Installing       : libsodium-1.0.19-4.amzn2023.x86_64                                                                                     11/14 
+  Installing       : php8.4-sodium-8.4.6-1.amzn2023.0.1.x86_64                                                                              12/14 
+  Installing       : php8.4-8.4.6-1.amzn2023.0.1.x86_64                                                                                     13/14 
+  Installing       : php8.4-mysqlnd-8.4.6-1.amzn2023.0.1.x86_64                                                                             14/14 
+  Running scriptlet: php8.4-mysqlnd-8.4.6-1.amzn2023.0.1.x86_64                                                                             14/14 
+  Verifying        : libsodium-1.0.19-4.amzn2023.x86_64                                                                                      1/14 
+  Verifying        : libxslt-1.1.43-1.amzn2023.0.1.x86_64                                                                                    2/14 
+  Verifying        : nginx-filesystem-1:1.26.3-1.amzn2023.0.1.noarch                                                                         3/14 
+  Verifying        : php8.4-8.4.6-1.amzn2023.0.1.x86_64                                                                                      4/14 
+  Verifying        : php8.4-cli-8.4.6-1.amzn2023.0.1.x86_64                                                                                  5/14 
+  Verifying        : php8.4-common-8.4.6-1.amzn2023.0.1.x86_64                                                                               6/14 
+  Verifying        : php8.4-fpm-8.4.6-1.amzn2023.0.1.x86_64                                                                                  7/14 
+  Verifying        : php8.4-mbstring-8.4.6-1.amzn2023.0.1.x86_64                                                                             8/14 
+  Verifying        : php8.4-mysqlnd-8.4.6-1.amzn2023.0.1.x86_64                                                                              9/14 
+  Verifying        : php8.4-opcache-8.4.6-1.amzn2023.0.1.x86_64                                                                             10/14 
+  Verifying        : php8.4-pdo-8.4.6-1.amzn2023.0.1.x86_64                                                                                 11/14 
+  Verifying        : php8.4-process-8.4.6-1.amzn2023.0.1.x86_64                                                                             12/14 
+  Verifying        : php8.4-sodium-8.4.6-1.amzn2023.0.1.x86_64                                                                              13/14 
+  Verifying        : php8.4-xml-8.4.6-1.amzn2023.0.1.x86_64                                                                                 14/14 
+
+Installed:
+  libsodium-1.0.19-4.amzn2023.x86_64            libxslt-1.1.43-1.amzn2023.0.1.x86_64           nginx-filesystem-1:1.26.3-1.amzn2023.0.1.noarch    
+  php8.4-8.4.6-1.amzn2023.0.1.x86_64            php8.4-cli-8.4.6-1.amzn2023.0.1.x86_64         php8.4-common-8.4.6-1.amzn2023.0.1.x86_64
+  php8.4-fpm-8.4.6-1.amzn2023.0.1.x86_64        php8.4-mbstring-8.4.6-1.amzn2023.0.1.x86_64    php8.4-mysqlnd-8.4.6-1.amzn2023.0.1.x86_64
+  php8.4-opcache-8.4.6-1.amzn2023.0.1.x86_64    php8.4-pdo-8.4.6-1.amzn2023.0.1.x86_64         php8.4-process-8.4.6-1.amzn2023.0.1.x86_64
+  php8.4-sodium-8.4.6-1.amzn2023.0.1.x86_64     php8.4-xml-8.4.6-1.amzn2023.0.1.x86_64
+
+Complete!
+[ec2-user@ip-172-31-23-35 html]$ php -S 0.0.0.0:8000
+[Mon Jun 16 23:00:00 2025] PHP 8.4.6 Development Server (http://0.0.0.0:8000) started
+[Mon Jun 16 23:01:10 2025] 189.113.134.74:23140 Accepted
+[Mon Jun 16 23:01:10 2025] PHP Warning:  require_once(/home/ec2-user/var/www/html/includes/config.php): Failed to open stream: No such file or directory in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:10 2025] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/dashboard.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:10 2025] 189.113.134.74:23140 [500]: GET /dashboard.php - Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/dashboard.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:10 2025] 189.113.134.74:23140 Closing
+[Mon Jun 16 23:01:10 2025] 189.113.134.74:47430 Accepted
+[Mon Jun 16 23:01:36 2025] PHP Warning:  require_once(/home/ec2-user/var/www/html/includes/config.php): Failed to open stream: No such file or directory in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:36 2025] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/dashboard.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:36 2025] 189.113.134.74:47430 [500]: GET /dashboard.php - Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/dashboard.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:01:36 2025] 189.113.134.74:47430 Closing
+[Mon Jun 16 23:01:36 2025] 152.233.254.106:43575 Accepted
+[Mon Jun 16 23:02:16 2025] PHP Warning:  require_once(/home/ec2-user/var/www/html/includes/config.php): Failed to open stream: No such file or directory in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:02:16 2025] PHP Fatal error:  Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/index.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:02:16 2025] 152.233.254.106:43575 [500]: GET /index.php - Uncaught Error: Failed opening required '/home/ec2-user/var/www/html/includes/config.php' (include_path='.:/usr/share/pear:/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ec2-user/var/www/html/includes/load.php:35
+Stack trace:
+#0 /home/ec2-user/var/www/html/index.php(2): require_once()
+#1 {main}
+  thrown in /home/ec2-user/var/www/html/includes/load.php on line 35
+[Mon Jun 16 23:02:16 2025] 152.233.254.106:43575 Closing
+[Mon Jun 16 23:02:16 2025] 152.233.254.106:10350 Accepted
+[Mon Jun 16 23:03:28 2025] 152.233.254.106:10350 Closed without sending a request; it was probably just an unused speculative preconnection
+[Mon Jun 16 23:03:28 2025] 152.233.254.106:10350 Closing
